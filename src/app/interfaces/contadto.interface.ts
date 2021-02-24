@@ -1,7 +1,7 @@
 import { Lancamento } from './lancamento.interface';
 
 export interface ContaDto {
-    id: bigint;
+    id: bigint,
     lancamentos: Lancamento,
     saldo: number
 }

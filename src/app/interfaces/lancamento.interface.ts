@@ -3,7 +3,7 @@ import { PlanoConta } from './planoconta.interface';
 
 export interface Lancamento {
     conta: bigint,
-    data: string,
+    data: string, //formato date
     descricao: string,
     id: bigint,
     planoConta: PlanoConta,
