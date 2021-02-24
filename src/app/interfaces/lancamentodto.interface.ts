@@ -1,5 +1,4 @@
 import { ContaDestino } from './enumcontadestino.enum';
-import { PlanoConta } from './planoconta.interface';
 
 export interface LancamentoDto {
     conta: bigint, // example: 1; ID da Conta
@@ -7,6 +6,6 @@ export interface LancamentoDto {
     data: string, // formato ($date); example: 2021-01-01; Data do Lançamento
     descricao: string, // example: PAGAMENTO CONTA LUZ; Descrição do Lançamento
     login: string, // example: user1; ID da Conta
-    planoConta: PlanoConta["id"], // example: 1; ID do Plano de Contas pertinente com a finalidade do lançamento
+    planoConta: bigint, // example: 1; ID do Plano de Contas pertinente com a finalidade do lançamento
     valor: number  // formato double; example: 10.12; Valor do Lançamento
 }
