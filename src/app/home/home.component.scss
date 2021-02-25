@@ -26,4 +26,45 @@
     &__benefits, &__invite {
         background-color: var(--color-bg-secondary) !important;
     }
+
+    &__titulo1{
+        margin: 0 0 9px;
+    }
+
+    &__radius{
+        position: absolute;
+        width: 261px;
+        height: 42px;
+        background: #FFFFFF;
+        border-radius: 20px;
+        display: block;
+        margin: 17px 0px 0px -3px;        
+        text-decoration: none;
+
+        
+    }
+    &__texto{
+        width: 84.35px;
+        height: 5.82px;
+        bottom: -1px;
+        left: 8px; 
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+
+        color: #8C52E5;
+    }
+
+    &__vector{
+        position: absolute;
+        left: 85.76%;
+        right: 14.76%;
+        top: 28.05%;
+        bottom: 7.17%;
+    }
 }
