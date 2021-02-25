@@ -1,0 +1,17 @@
+.card {
+    &__action button {
+        background: var(--button-bg-green);
+        color: var(--button-color-default);
+    }
+
+    &__link {
+        margin: 0.5em;
+    }
+
+    &__footer a {
+        font-size: 0.9em;
+        color: #8C52E5;
+        text-decoration: none;
+        font-weight: var(--font-weight-medium);
+    }
+}
