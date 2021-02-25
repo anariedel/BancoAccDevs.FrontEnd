@@ -1,21 +1,4 @@
 .card {
-    &__title {
-        font-size: 1.5rem;
-        padding: 1rem;
-    }
-
-    &__body input {
-        border-top-style: hidden;
-        border-right-style: hidden;
-        border-left-style: hidden;
-        border-bottom-style: solid;
-        border-bottom-color: #b9b9b9;
-        padding: 1em;
-        background-color: transparent;
-        width: 20em;
-        margin: 1em;
-    }
-
     &__action button {
         background: var(--button-bg-green);
         color: var(--button-color-default);
@@ -29,13 +12,6 @@
         font-size: 0.9em;
         color: #8C52E5;
         text-decoration: none;
-    }
-}
-
-@media (max-width: 480px) {
-    .card{
-        &__body input{
-            width: 14em;
-        }
+        font-weight: var(--font-weight-medium);
     }
 }

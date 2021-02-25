@@ -3,6 +3,11 @@
     margin-top: 3em;
 }
 
+.header img {
+    max-width: 291px;
+    max-height: 65px;
+}
+
 @media (max-width: 320px) {
     .header {
         margin-left: 1em;
