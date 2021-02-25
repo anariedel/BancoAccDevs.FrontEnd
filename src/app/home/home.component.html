@@ -1,23 +1,42 @@
 <div class="container">
-    <div class="home">
+    <div class="home row ">
         <section class="home__register">
-            <div class="home__register-description">
-                <h1 class="home__titulo1"> Gama Bank é um projeto de nossos alunos. </h1>
-                <span>Já tem conta?</span>
-                <a href="" class="home__radius">  
+            <div class="home__register-description col-sm ">
+                <h1 class="home__titulo1"> Gama Bank é um projeto de nossos alunos. <br><br>Já tem conta? </h1>
+              
+                <a href="" class="home__radius col-sm">  
                     <p class="home__texto">Acessar</p> 
                     <img class="home__vector" src="../../assets/images/seta.svg" />
 
                 </a>
             </div>
 
-    
-            <img src="../../assets/images/happy.svg" />
-    
+            <div class=" home__img col-sm ">
+                <img class="img-fluid foto-principal " src="../../assets/images/happy.svg" />
+            </div>
             <!-- aqui entra form  -->
-            <div>
-                Peça sua conta e cartão de crédito do Gama Bank
-                <button>Acessar</button>
+            <div class="home__formulario  col-sm ">
+                <form class="home__fml">
+                    <div class="home__titulo-form">
+                        <span class="home__txt-titulo">Peça sua conta e cartão de crédito do Gama Bank</span>
+                    </div>
+
+                    <div class="form-group">
+                      <input type="text" class="form-control border-bottom" id="exampleInputCPF" aria-describedby="cpflHelp"  autocompçete="off" maxlength="11" placeholder="Digite seu CPF" required>
+                    </div>
+                    <input type="text" class="form-control" id="" name="" placeholder="Escolha um nome de usuário" required>
+                    <input type="text" class="form-control"  id="" name="" placeholder="Nome Completo" required>
+                    <div class="form-group">
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirme sua senha" required>
+                    </div>
+                    
+                        <button type="submit" class="btn btn-primary home__continua"><span class="home__txt-btn">Continuar  </span>              
+                            <img class="home__vector2" src="../../assets/images/Vector2.svg" />
+                        </button>
+                  </form>
 
             </div>
             <!-- aqui finaliza form  -->
