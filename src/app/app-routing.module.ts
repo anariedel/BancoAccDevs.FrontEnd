@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'recoverypass', 
+  { path: '', 
+    loadChildren: () => import('./logged-in-area/logged-in-area.module').then(m => m.LoggedInAreaModule),
+  }, { 
+    path: 'recoverypass', 
   loadChildren: () => import('./recovery-pass/recovery-pass.module').then(m => m.RecoveryPassModule)
   }, {
     path: 'login', 
