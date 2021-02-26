@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoggedInAreaComponent } from './logged-in-area.component';
 
 const routes: Routes = [{
-  path:'area-logada',
+  path:'logged-in',
   component: LoggedInAreaComponent,
   children: [
     { 
