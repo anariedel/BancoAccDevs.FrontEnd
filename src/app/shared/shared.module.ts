@@ -13,7 +13,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     CommonModule
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    SidebarComponent,
   ]
 })
 export class SharedModule { }
