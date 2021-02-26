@@ -2,13 +2,15 @@
     <div class="home row ">
         <section class="home__register">
             <div class="home__register-description col-sm ">
-                <h1 class="home__titulo1"> Gama Bank é um projeto de nossos alunos. <br><br>Já tem conta? </h1>
-              
-                <a href="" class="home__radius col-sm">  
-                    <p class="home__texto">Acessar</p> 
-                    <img class="home__vector" src="../../assets/images/seta.svg" />
-
-                </a>
+                <div>
+                    <h1 class="home__titulo1"> Gama Bank é um projeto de nossos alunos. <br><br>Já tem conta? </h1>
+                
+                    <button type="submit" class="btn btn-primary home__radius"> 
+                        <img class="home__vector" src="../../assets/images/seta.svg" />
+                        <p class="home__texto">Acessar</p> 
+                        
+                    </button>    
+                </div>
             </div>
 
             <div class=" home__img col-sm ">
@@ -33,37 +35,46 @@
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirme sua senha" required>
                     </div>
                     
-                        <button type="submit" class="btn btn-primary home__continua"><span class="home__txt-btn">Continuar  </span>              
-                            <img class="home__vector2" src="../../assets/images/Vector2.svg" />
-                        </button>
-                  </form>
+                    <button type="submit" class="btn btn-primary home__continua"><span class="home__txt-btn">Continuar  </span>              
+                        <img class="home__vector2" src="../../assets/images/Vector2.svg" />
+                    </button>
+                </form>
 
             </div>
             <!-- aqui finaliza form  -->
         </section>
         <section class="home__benefits">
-            <h3>Conta digital do Gama Academy</h3>
-            <!-- aqui entra imagem -->
-            <span>Rende mais que a poupança,
-                sem taxa de manutenção
-                nem tarifas escondidas.
-            </span>
-    
+            
+            <div class="home__benefits-primeiro">
+                <h3 class="home__titulo2">Conta digital do Gama Academy</h3>
+                <img class="img-fluid home__img-primeira" src="../../assets/images/app-bg 1.svg">
+                <p class="home__subtitulo1">Rende mais que a poupança,
+                    sem taxa de manutenção
+                    nem tarifas escondidas.
+                </p>
+            </div>
+        
             <!-- aqui entra divisão visual  -->
-    
-            <h3>Cartão de Crédito</h3>
-            <!-- aqui entra imagem -->
-            <p>Rende mais que a poupança,
-                sem taxa de manutenção
-                nem tarifas escondidas.
-            </p>
+            <div class="home__benefits-segundo ">
+                <h3 class="home__titulo3">Cartão de Crédito</h3>
+                <img class="img-fluid home__img-segundo " src="../../assets/images/app-bg 2.svg">
+                <p class="home__subtitulo2">Rende mais que a poupança,
+                    sem taxa de manutenção
+                    nem tarifas escondidas.
+                </p>
+            </div>    
+
         </section>
         <section class="home__annuity">
-            <h2 class="section__title">Zero anuidade</h2>
-            <p>Burocraria custa caro. Somos eficientes, 
-                para você não ter que pagar tarifas.
-            </p>
-            <span>0,00</span>
+            <div class="home__annuity-primeiro col-xs- 12 col-sm-12 col-md-6 col-lg-6">
+                <h2 class="section__title">Zero anuidade</h2>
+                <p>Burocraria custa caro. Somos eficientes, 
+                    para você não ter que pagar tarifas.
+                </p>
+            </div>
+            <div class="home__annuity-segundo col-xs- 12 col-sm-12 col-md-6 col-lg-6">
+                <span>0,00</span>
+            </div>
         </section>
         <section class="home__end-complexity">
             <h2 class="section__title">O fim da complexidade</h2>
