@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+
+   
+  
 const routes: Routes = [
-  { path: '', 
+  { path: 'home', 
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+  }, {
+     path: '', 
     loadChildren: () => import('./logged-in-area/logged-in-area.module').then(m => m.LoggedInAreaModule),
   }, { 
     path: 'recoverypass', 
