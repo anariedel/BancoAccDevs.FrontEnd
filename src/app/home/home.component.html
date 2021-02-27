@@ -2,16 +2,18 @@
     
         <section class="home__register container row">
             
-            <div class="home__register-description col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="home__register-description col-xs-12 col-sm-12 col-md-6 col-lg-6"> <!---->
+                <!-- aqui não tinha div-->
+                <h2 class="home__titulo1"> Gama Bank é um projeto de nossos alunos.</h2><br>
+                <h2 class="home__titulo1">Já tem conta? </h2>
                 
-                    <h1 class="home__titulo1"> Gama Bank é um projeto de nossos alunos. Já tem conta? </h1>
-                    
-                
-                    <button type="submit" class="btn btn-primary home__radius"> 
+                <div class="mt-4 mb-5">
+                    <button type="submit" class="btn btn-primary home__radius"> Acessar
                         <img class="home__vector" src="../../assets/images/seta.svg" />
-                        <p class="home__texto">Acessar</p> 
                         
-                    </button>    
+                        
+                    </button>
+                </div>                       
                 
             </div>
             
@@ -20,16 +22,16 @@
                     <span class="home__txt-titulo">Peça sua conta e cartão de crédito do Gama Bank</span>
 
                     <div class="form-group">
-                      <input type="text" class="form-control border-bottom" id="exampleInputCPF" name="exampleInputCPF"  aria-describedby="cpflHelp"  autocompçete="off" maxlength="11" placeholder="Digite seu CPF" required ngModel>
+                      <input type="text" class="form-control border-bottom" id="exampleInputCPF" name="exampleInputCPF"  aria-describedby="cpflHelp"  autocompçete="off" maxlength="11" placeholder="Digite seu CPF" required [(ngModel)]="CPF">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="nomeUsuario" name="nomeUsuario" placeholder="Escolha um nome de usuário" ngModel required>
+                        <input type="text" class="form-control" id="nomeUsuario" name="nomeUsuario" placeholder="Escolha um nome de usuário" [(ngModel)]="usuario" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control"  id="nomeCompleto" name="nomeCompleto" placeholder="Nome Completo" ngModel required>
+                        <input type="text" class="form-control"  id="nomeCompleto" name="nomeCompleto" placeholder="Nome Completo" [(ngModel)]="nomeCompleto" required>
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control" id="exampleInputPassword1" name="exampleInputPassword1" placeholder="Senha" ngModel required>
+                      <input type="password" class="form-control" id="exampleInputPassword1" name="exampleInputPassword1" placeholder="Senha" [(ngModel)]="password" required>
                     </div>
                     <div class="form-group">
                         <input type="password" class="form-control" id="exampleInputPassword2" name="exampleInputPassword2" placeholder="Confirme sua senha" ngModel required>
@@ -48,10 +50,15 @@
            <div class="home__benefits-primeiro col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <h3 class="home__titulo2">Conta digital do Gama Academy</h3>
                 <img class="img-fluid home__img-primeira" src="../../assets/images/app-bg 1.svg">
-                <p class="home__subtitulo1">Rende mais que a poupança,
-                    sem taxa de manutenção
-                    nem tarifas escondidas.
-                </p>
+                
+                <div class="pl-1 home__subtitulo">
+                    <p class="home__subtitulo1">
+                        Rende mais que a poupança,<br>
+                        sem taxa de manutenção<br>
+                        nem tarifas escondidas.
+                    </p>
+                </div>
+
             </div>
 
         
@@ -59,10 +66,13 @@
             <div class="home__benefits-segundo col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <h3 class="home__titulo3">Cartão de Crédito</h3>
                 <img class="img-fluid home__img-segundo " src="../../assets/images/app-bg 2.svg">
-                <p class="home__subtitulo2">Rende mais que a poupança,
-                    sem taxa de manutenção
-                    nem tarifas escondidas.
-                </p>
+                <div class="pl-1 home__subtitulo">
+                    <p class="home__subtitulo2">
+                        Rende mais que a poupança,<br>
+                        sem taxa de manutenção<br>
+                        nem tarifas escondidas.
+                    </p>
+                </div>
             </div>   
             
             

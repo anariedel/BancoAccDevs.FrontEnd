@@ -37,13 +37,11 @@
     }
 
     &__register-description {
-        background: orange;
+        padding: 0 13%;
         
     }
 
-    &__formulario{
-        background: red;
-    }
+    
 
     &__register-description span {
         margin-top: 1rem;
@@ -54,8 +52,6 @@
     }
 
     &__titulo1{
-        position: relative;
-        padding: 25% 15%;
         font-family: Roboto;
         font-style: normal;
         font-weight: normal;
@@ -65,24 +61,26 @@
     }
 
     &__radius{
-        background: #FFFFFF;
+        margin-bottom: 10px;
+        width: 100%;
+        background: #fff !important;
+        color: #8C52E5;
         border-radius: 20px;
-        text-decoration: none;
-        min-width: 250px;
-        bottom: 122px;
-        position: relative;
-        margin: 0 14%;
-
-        
-    }
-    &__texto{
-        width: 84.35px;
+        font-size: 18px;
+        padding: 08px 24px 08px 24px;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
         font-family: Roboto;
         font-style: normal;
         font-weight: 500;
-        font-size: 17px;    
-        line-height: 11px;
-        color: #8C52E5;
+        border:none ;
+        
+
+        
+    }
+    .btn-primary:focus{
+        border: none!important;
     }
 
     &__vector{
@@ -183,6 +181,11 @@
         padding: 8% 0 1%;
         
     }
+    
+    &__subtitulo{
+        padding: 0 12%;
+    }
+
 
     &__subtitulo1{
         font-family: Roboto;
@@ -190,8 +193,6 @@
         font-weight: normal;
         font-size: 21px;
         line-height: 25px;
-        display: flex;
-        align-items: center;
         color: #68DE5A;
     }
 
@@ -206,7 +207,16 @@
     }
 
     &__img-segundo{
-        margin:2% 14% 10%;
+        margin:2% 14% 14%;
+    }
+
+    &__subtitulo2{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 21px;
+        line-height: 25px;
+        color: #000;
     }
 
 
@@ -222,7 +232,6 @@
     }
 
     &__annuity-primeiro{
-       background: orange;
        width: auto;
 
         h2{
@@ -249,7 +258,6 @@
     }
 
     &__annuity-segundo{
-        background: palevioletred;
         width: auto;
 
         span{
@@ -325,3 +333,4 @@
     }
 
 }
+
