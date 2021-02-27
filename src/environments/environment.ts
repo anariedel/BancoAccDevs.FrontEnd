@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL: 'https://accenture-java-desafio.herokuapp.com/v2/api-docs',
+  API_URL: 'https://accenture-java-desafio.herokuapp.com/',
 };
 
 /*
