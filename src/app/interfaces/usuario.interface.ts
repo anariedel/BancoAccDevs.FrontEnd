@@ -1,3 +1,5 @@
+import { Conta } from './conta.interface';
+
 export interface Usuario {
     cpf: string,
     id: bigint,
@@ -6,4 +8,5 @@ export interface Usuario {
     redefinirSenha: boolean,
     senha: string,
     senhaTemporaria: string
+    conta: Conta,
 }

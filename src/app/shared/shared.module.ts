@@ -1,8 +1,11 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { ToastrModule } from 'ngx-toastr';
 
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+
 
 @NgModule({
   declarations: [
@@ -10,7 +13,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     SidebarComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule,
+    ToastrModule.forRoot(),
   ],
   exports: [
     HeaderComponent,
