@@ -276,8 +276,11 @@
         background-color: #60C059;
         opacity: 0.7;
         height: 787px;
-        background-position: 0% 28%;
         align-items: center;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     &__end-complexity-unica{
@@ -303,8 +306,7 @@
     }
 
     &__invite-primeira{ 
-        padding: 0 18px 0 65px;
-        //background: chartreuse;
+        padding: 0 7% 0;
 
         p{
             text-align: justify;
@@ -314,9 +316,7 @@
 
         
     }
-    &__title-invite{
-        text-align: justify;
-    }
+    
 
         
 
