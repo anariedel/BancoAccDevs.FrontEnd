@@ -31,11 +31,11 @@
                 
                 <button class="btn button-default" 
                     (click)="onSubmit()" 
-                    [disabled]="(!loginForm.controls.usuario.value || !loginForm.controls.senha.value)  && !erroNoCarregamento">
+                    [disabled]="(!loginForm.controls.usuario.value || !loginForm.controls.senha.value)  && !isLoading">
                     
                     <span>Continuar </span>
-                    <i class="fas fa-arrow-right" *ngIf="!estaCarregando"></i>
-                    <div class="spinner-border spinner-border-sm text-light" role="status" *ngIf="estaCarregando && !erroNoCarregamento">
+                    <i class="fas fa-arrow-right" *ngIf="!isLoading"></i>
+                    <div class="spinner-border spinner-border-sm text-light" role="status" *ngIf="isLoading && !errorLoading">
                         <span class="sr-only">Loading...</span>
                     </div>
                 </button>

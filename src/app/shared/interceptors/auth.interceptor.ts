@@ -13,7 +13,6 @@ export class AuthInterceptor implements HttpInterceptor {
   ) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    console.log('Passou pelo interceptor', request);
 
     request = request.clone({
       setHeaders: {
@@ -21,6 +20,8 @@ export class AuthInterceptor implements HttpInterceptor {
         
       }
     });
+
+    console.log(request);
 
     return next.handle(request);
   }

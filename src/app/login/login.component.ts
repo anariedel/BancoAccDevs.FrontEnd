@@ -6,7 +6,6 @@ import { finalize } from 'rxjs/operators';
 
 import { LoginService } from './login.service';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,8 +15,8 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  estaCarregando = false;
-  erroNoCarregamento = false;
+  isLoading = false;
+  errorLoading = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -39,11 +38,11 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.estaCarregando = true;
+    this.isLoading = true;
 
     this.loginService.login(this.loginForm.value)
       .pipe(
-        finalize(() => this.estaCarregando = false)
+        finalize(() => this.isLoading = false)
       )
       .subscribe(
         response => this.onSuccessLogin(),
@@ -77,18 +76,16 @@ export class LoginComponent implements OnInit {
       this.validateAllFormFields(this.loginForm);
     }
 
-    console.log(this.loginForm.controls)
-
-    // this.login();
+    this.login();
   }
 
   onSuccessLogin() {
-    this.router.navigate(['/logged-in/dash']);
+    this.router.navigate(['/dash']);
     this.toastr.success('Login efetuado com sucesso', 'Sucesso!');
   }
 
   onErrorLogin() {
-    this.erroNoCarregamento = true;
+    this.errorLoading = true;
     this.toastr.error('Erro ao efetuar login','Erro');
   }
 

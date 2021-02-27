@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Conta } from 'src/app/interfaces/conta.interface';
-import { Token } from 'src/app/interfaces/token.interface';
 import { Usuario } from 'src/app/interfaces/usuario.interface';
-
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +9,7 @@ import { Usuario } from 'src/app/interfaces/usuario.interface';
 export class AuthService {
 
   user: Usuario
-  token: Token;
+  token: string;
   conta: Conta;
   contaCredito: Conta;
 
@@ -39,7 +37,7 @@ export class AuthService {
     return null;
   }
 
-  setToken(token: Token) {
+  setToken(token: string) {
     this.token = token;
     localStorage.setItem('token', JSON.stringify(token));
   }
@@ -54,8 +52,8 @@ export class AuthService {
     localStorage.setItem('contaCredito', JSON.stringify(contaCredito));
   }
 
-  getToken() {
-    const token = JSON.parse(localStorage.getItem(JSON.parse('token')));
+  getToken(): string {
+    const token: string = JSON.parse(localStorage.getItem('token'));
     if(token) {
       this.token = token;
       return this.token;
@@ -64,7 +62,7 @@ export class AuthService {
     return null;
   }
 
-  estaLogado(): boolean {
+  isLoggedIn(): boolean {
     return this.getUsuario() && this.getToken() ? true : false;
   }
 

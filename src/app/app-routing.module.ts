@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { IsLoggedInGuard } from './shared/guards/is-logged-in.guard';
+
 const routes: Routes = [
   { path: '', 
     loadChildren: () => import('./logged-in-area/logged-in-area.module').then(m => m.LoggedInAreaModule),
+    canActivate: [IsLoggedInGuard]
   }, { 
     path: 'recoverypass', 
   loadChildren: () => import('./recovery-pass/recovery-pass.module').then(m => m.RecoveryPassModule)
@@ -11,7 +14,9 @@ const routes: Routes = [
     path: 'login', 
     loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
   }, 
-  { path: '', redirectTo: 'login', pathMatch: 'full'},
+  { path: '', redirectTo: 'logged-in-area', pathMatch: 'full'},
+  { path: '**', redirectTo: ''},
+
 ];
 
 @NgModule({
