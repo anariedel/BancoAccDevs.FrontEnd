@@ -9,30 +9,40 @@
 
 
 .home {
-    //background-color: #8C52E5;
+    
 
 
     &__register {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        height: 801px;
+        background-image: url('../../assets/images/happy.svg');
+        background-position: bottom;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-flow: wrap;
+        align-items: center;
+        background-color: #8C52E5;
     }
+    
+    @media (max-width:600px) {
+        &__register {
+            background-image:none;
+        }
+    }
+       
 
     &__register img {
         display: block;
     }
 
     &__register-description {
-        background-color: orange;
-
+        background: orange;
         
-    }
-    &__img{
-        background-color: green;
     }
 
     &__formulario{
-        background-color: orangered;
+        background: red;
     }
 
     &__register-description span {
@@ -45,26 +55,23 @@
 
     &__titulo1{
         position: relative;
-        padding: 35% 15%;
+        padding: 25% 15%;
         font-family: Roboto;
         font-style: normal;
         font-weight: normal;
         font-size: 29px;
         line-height: 34px;
-        display: flex;
-        align-items: center;
         color: #FFFFFF;
-        margin: auto;
     }
 
     &__radius{
         background: #FFFFFF;
         border-radius: 20px;
         text-decoration: none;
-        width: 261px;
+        min-width: 250px;
         bottom: 122px;
         position: relative;
-        margin: 0 49px;
+        margin: 0 14%;
 
         
     }
@@ -73,11 +80,8 @@
         font-family: Roboto;
         font-style: normal;
         font-weight: 500;
-        font-size: 17px;
-        line-height: 20px;
-        display: flex;
-        align-items: center;
-        padding-left: 20px;
+        font-size: 17px;    
+        line-height: 11px;
         color: #8C52E5;
     }
 
@@ -86,16 +90,6 @@
         float: right;
     }
 
-    .foto-principal{
-        position: absolute;        
-        left: 256px;
-        top: 159px;
-
-    }
-
-    &__formulario{
-        
-    }
 
     &__titulo-form{
         margin: 50px;
@@ -113,23 +107,20 @@
     }
 
     &__fml{
-        position: absolute;
-        width: 349px;
-        height: 542.23px;
-        left: 899px;
-        top: 152px;
+        width: 50%;
+        min-height: 450px;
         text-align: center;
-        margin: 21px;
+        margin: 0 41%;
         background: #FBFBFB;
-        border-radius: 8px;
+        border-radius: 8px;  
+        padding: 0 21px;
+
 
         input{
-            margin: 21px;
-            width: 270.59px;
-            border-top: hidden;
-            border-left: hidden;
-            border-right: hidden;
+            border-radius: 0;
+            border: none;
             border-bottom: 1px solid #878686!important;
+            margin: 21px 0;
         }
 
         input:focus, input:focus, select:focus {
@@ -160,10 +151,7 @@
 
 
     &__continua{
-        width: 276.74px;
-        height: 47.66px;
-        left: 992.9px;
-        top: 619.6px;
+        width: 100%;
         border:none;
         background: #D8D8D8;
         border-radius: 20px;
@@ -179,17 +167,20 @@
 
     /*--------------------------- Section 2 --------------------------*/
     &__benefits{
-        display: inline-block;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-flow: wrap;
     }
 
     &__benefits-primeiro{
         background-color: #000;
-        display: inline-block;
+        margin: 1% 0;
     }
 
     &__titulo2{
         text-align: center;
         color: #68DE5A;
+        padding: 8% 0 1%;
         
     }
 
@@ -202,19 +193,20 @@
         display: flex;
         align-items: center;
         color: #68DE5A;
-        //width: 459px;
-        background-color: pink;
     }
 
     &__benefits-segundo{
         background-color: #fff;
-        text-align: center;
-        display: inline-block;
+        margin: 1% 0;
     }
     
     &__titulo3{
-        text-align: center;
         color: #000;
+        padding: 8% 20% 1%;
+    }
+
+    &__img-segundo{
+        margin:2% 14% 10%;
     }
 
 
@@ -223,15 +215,15 @@
 
     &__annuity{
         background-color: #8C52E5;
-        display: inline-block;
-        height: 700px;
+        min-height: 100vh;flex-direction: row;
+        justify-content: space-around;
+        flex-flow: wrap;
+        align-items: center;
     }
 
     &__annuity-primeiro{
-        display: inline-block;
-        margin-top: 16%;
-        margin-left: 4%;
-        width: 40%;
+       background: orange;
+       width: auto;
 
         h2{
             font-family: Roboto;
@@ -257,8 +249,8 @@
     }
 
     &__annuity-segundo{
-        display: inline-block;
-        padding-left: 10%;
+        background: palevioletred;
+        width: auto;
 
         span{
             font-family: Roboto;
@@ -266,8 +258,6 @@
             font-weight: 500;
             font-size: 140px;
             line-height: 218px;
-            display: flex;
-            align-items: center;
             color: #68DE5A;
         }
     }
@@ -279,12 +269,11 @@
         opacity: 0.7;
         height: 787px;
         background-position: 0% 28%;
+        align-items: center;
     }
 
     &__end-complexity-unica{
-        margin-top: 23%;
-        margin-left: 10%;
-        width: 50%;
+        margin: 0 7%;
 
         p{
             margin-bottom: 0;
@@ -298,18 +287,21 @@
 
 /*----------------------------------- Section invite-------------------------*/
     &__invite{
-        height: 801px;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-flow: wrap;
+        align-items: center;
+        min-height: 100vh;
     }
 
-    &__invite-primeira{
-        margin: auto;
-        display: inline-block;
-        text-align: center;
-        vertical-align: middle;  
-        padding-left: 8%;
+    &__invite-primeira{ 
+        padding: 0 18px 0 65px;
+        //background: chartreuse;
 
         p{
             text-align: justify;
+            margin-bottom: 3px;
+            word-wrap: break-word;
         }
 
         
@@ -324,6 +316,7 @@
         margin: auto;
         display: inline-block;
         text-align: center;
+        //background-color: darkblue;
     }
 
     &__celphone{
