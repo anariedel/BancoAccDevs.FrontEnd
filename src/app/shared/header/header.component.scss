@@ -7,3 +7,14 @@ height: 65px;
 left: 63px;
 top: 16px;
 }
+
+@media (max-width: 320px) {
+    .header {
+        margin-left: 1em;
+        margin-top: 1em;
+    }
+
+    .card {
+        margin: 3em auto;
+    }
+}
