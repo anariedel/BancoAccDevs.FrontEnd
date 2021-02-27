@@ -1,24 +1,43 @@
 <app-header></app-header>
-<router-outlet></router-outlet>
 
 <div class="container">
     <div class="card">
         <div class="card-body">
             <h1 class="card-title">Faça seu login</h1>
 
-            <form class="mb-4">
-                <div class="mb-3">
-                  <input type="email" class="form-control input-default" placeholder="Digite seu usuário">
+            <form [formGroup]="loginForm" class="login-form mb-4">
+                <div class="form-group">
+                    <input 
+                        type="text"
+                        id="usuario" 
+                        class="form-control input-default" 
+                        placeholder="Digite seu usuário"
+                        formControlName="usuario"
+                        [class.is-invalid]="exibeErro('usuario')">
+                        <p *ngIf="exibeErro('usuario')" class="invalid-feedback">Usuário inválido</p>
                 </div>
-                <div class="mb-3">
-                  <input type="password" class="form-control input-default" placeholder="Digite sua senha">
+
+                <div class="form-group">
+                    <input 
+                        type="password" 
+                        id="senha"
+                        class="form-control input-default" 
+                        placeholder="Digite sua senha"
+                        formControlName="senha"
+                        [class.is-invalid]="exibeErro('senha')">
+                        <p *ngIf="exibeErro('senha')" class="invalid-feedback">Senha inválida</p>
                 </div>
-                <div class="card__action">
-                    <button class="btn button-default">
-                        <span>Continuar</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-                </div>              
+                
+                <button class="btn button-default" 
+                    (click)="onSubmit()" 
+                    [disabled]="(!loginForm.controls.usuario.value || !loginForm.controls.senha.value)  && !isLoading">
+                    
+                    <span>Continuar </span>
+                    <i class="fas fa-arrow-right" *ngIf="!isLoading"></i>
+                    <div class="spinner-border spinner-border-sm text-light" role="status" *ngIf="isLoading && !errorLoading">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </button>
             </form>
 
             <div class="card__footer">
