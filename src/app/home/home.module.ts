@@ -2,8 +2,10 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { ContatoModule } from './../contato/contato.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+
 
 
 @NgModule({
@@ -13,6 +15,7 @@ import { HomeComponent } from './home.component';
     HomeRoutingModule,   
     FormsModule,
     ReactiveFormsModule,
+    ContatoModule,
     
   ]
 })

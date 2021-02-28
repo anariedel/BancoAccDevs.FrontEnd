@@ -1,0 +1,59 @@
+<div class="home container">
+
+    <section class="home__register container row">
+        <div class="home__formulario  col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <form [formGroup]="cadastro"  class="home__fml"  >                    
+                <span class="home__txt-titulo">Peça sua conta e cartão de crédito do Gama Bank</span>
+
+                <div class="form-group">
+                    <input type="text" class="form-control border-bottom"
+                    id="CPF" name="CPF"  aria-describedby="cpflHelp"
+                    autocompçete="off" maxlength="11" placeholder="Digite seu CPF"
+                    formControlName="CPF"
+                    [class.is-invalid]="exibeErro('CPF')">
+                    <p *ngIf="exibeErro('CPF')" class="invalid-feedback"></p>                
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="nomeUsuario"
+                    name="nomeUsuario" placeholder="Escolha um nome de usuário"
+                    formControlName="nomeUsuario"
+                    [class.is-invalid]="exibeErro('nomeUsuario')">
+                    <p *ngIf="exibeErro('nomeUsuario')" class="invalid-feedback"></p>
+                    
+
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control"  id="nomeCompleto"
+                    name="nomeCompleto" placeholder="Nome Completo"
+                    formControlName="nomeCompleto" 
+                    [class.is-invalid]="exibeErro('nomeCompleto')">
+                    <p *ngIf="exibeErro('nomeCompleto')" class="invalid-feedback"></p>
+                    
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password1"
+                    name="password1" placeholder="Senha"
+                    formControlName="password1" 
+                    [class.is-invalid]="exibeErro('password1')" >
+                    <p *ngIf="exibeErro('password1')" class="invalid-feedback"></p>                
+                </div>
+
+               <div class="form-group">
+                    <input type="password" class="form-control" id="confirmPassword"
+                    name="confirmPassword" placeholder="Confirme sua senha"                    
+                    [class.is-invalid]="exibeErro('confirmPassword')">
+                    <p *ngIf="exibeErro('confirmPassword')" class="invalid-feedback">Senha não combina</p> 
+                    
+                </div>
+                
+                <button (click)="onSubmit()"  class="btn btn-primary home__continua">
+                    <span class="home__txt-btn" >Continuar  </span>              
+                    <img class="home__vector2" src="../../assets/images/Vector2.svg" />
+                                       
+                </button>
+            </form>
+
+        </div>
+        <!-- aqui finaliza form  -->
+    </section>
+</div>
