@@ -1,0 +1,35 @@
+.warning {
+    width: 30%;
+    height: 30%;
+    top: -30px;
+    position: relative;
+}
+
+.texto {
+    width: 90%;
+    height: 109px;
+    margin-left: 10px;
+    margin-right:20px;
+    top: 10%;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 5vw;
+    line-height: 1em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #8C52E5;
+}
+
+.card {
+    &__action button {
+        background: var(--color-bg-green);
+        color: var(--color-bg-white);
+        position: relative;
+        bottom: -20px;
+        size: 3vw;
+    }
+}
