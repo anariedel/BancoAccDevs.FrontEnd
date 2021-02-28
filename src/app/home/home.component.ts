@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-home', 
@@ -21,17 +22,27 @@ export class HomeComponent implements OnInit {
 
   onSubmit(form){
     if(!form.valid){
-      alert('Formulário Iválido')
+
+      form.controls.CPF.markAsTouched();
+      form.controls.nomeUsuario.markAsTouched();
+      form.controls.nomeCompleto.markAsTouched();
+      form.controls.password1.markAsTouched();
+
+      return
     }
-    
-    
-    
-    
+
     console.log('CPF', this.CPF);
     console.log('usuario', this.usuario);
     console.log('nome do usuario', this.nomeCompleto);
-    console.log('Senah', this.password);
-
+    console.log('Senha', this.password);
   }
+
+  exibeErro(nomeControle: string, form: FormGroup){
+   if(!form.controls[nomeControle]){
+    return false;
+   }
+    return form.controls[nomeControle].invalid && form.controls[nomeControle].touched;
+  }
+  
 
 }
