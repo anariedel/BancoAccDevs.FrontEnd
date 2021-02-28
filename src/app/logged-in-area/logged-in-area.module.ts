@@ -10,7 +10,7 @@ import { LoggedInAreaComponent } from './logged-in-area.component';
 @NgModule({
   declarations: [
     LoggedInAreaComponent,
-    DashComponent
+    DashComponent,
   ],
   imports: [
     CommonModule,
