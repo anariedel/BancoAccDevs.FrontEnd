@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-home', 
@@ -8,6 +8,10 @@ import { FormGroup } from '@angular/forms';
   
 })
 export class HomeComponent implements OnInit {
+  @ViewChild('cpfInput') cpfInput: ElementRef;
+  @ViewChild('usuarioInput') usuarioInput: ElementRef;
+  @ViewChild('nomeCompletoInput') nomeCompletoInput: ElementRef;
+  @ViewChild('passwordInput') passwordInput: ElementRef;
 
   CPF: number;
   usuario: string;
@@ -28,7 +32,27 @@ export class HomeComponent implements OnInit {
       form.controls.nomeCompleto.markAsTouched();
       form.controls.password1.markAsTouched();
 
-      return
+      if(form.controls.CPF.invalid){
+        this.cpfInput.nativeElement.focus();
+        return;
+      }
+
+      if(form.controls.nomeUsuario.invalid){
+        this.usuarioInput.nativeElement.focus();
+        return;
+      }
+
+      if(form.controls.nomeCompleto.invalid){
+        this.nomeCompletoInput.nativeElement.focus();
+        return;
+      }
+
+      if(form.controls.password1.invalid){
+        this.passwordInput.nativeElement.focus();
+        return;
+      }
+
+      return;
     }
 
     console.log('CPF', this.CPF);
@@ -37,7 +61,7 @@ export class HomeComponent implements OnInit {
     console.log('Senha', this.password);
   }
 
-  exibeErro(nomeControle: string, form: FormGroup){
+  exibeErro(nomeControle: string, form: NgForm){
    if(!form.controls[nomeControle]){
     return false;
    }
