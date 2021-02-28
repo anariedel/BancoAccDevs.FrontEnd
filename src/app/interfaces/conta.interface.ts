@@ -1,9 +1,10 @@
-import { EnumConta } from './enumconta.enum';
+import { Lancamento } from './lancamento.interface';
 
 export interface Conta {
     descricao: string,
-    id: bigint,
+    id: number,
     numero: string,
     saldo: number, //formato double
-    tipo: EnumConta
+    tipo: string,
+    lancamentos: Array<Lancamento>,
 }

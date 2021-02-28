@@ -1,1 +1,69 @@
-<p>dash works!</p>
+<div class="container">
+    <div class="card">
+        <div class="card__header">
+            <div class="card__header__icon">
+                ICON
+            </div>
+                        
+            <div class="card__header__text">
+                <span>Conta</span>
+            </div>
+
+            <div class="card__body">
+                <span>Saldo disponível: </span>
+                <br>
+                <span>R$: {{ contaBanco?.saldo ? contaBanco.saldo > 0 : '0,00' }}</span>
+                <br>
+                <span>Transações R$ 2000</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card__header__icon">
+                <div class="card__header">
+                ICON
+            </div>
+                        
+            <div class="card__header__text">
+                <span>Conta crédito</span>
+            </div>
+
+            <div class="card__body">
+                <span>Fatura atual </span>
+                <span>R$: {{ contaCredito?.saldo ? contaBanco.saldo > 0 : '0,00' }}</span>
+                <br>
+                <span>Limite disponível: R$ 9000 </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card__header">
+            <div class="card__header__icon">
+                ICON
+            </div>
+                        
+            <div class="card__header__text">
+                <span>Últimos lançamentos</span>
+            </div>
+
+            <div class="card__body">
+                <div class="card__body__icon"></div>
+                <ul>
+                    <li *ngFor="let lancamento of lancamentos">
+                        <span>Compra no  {{ lancamento?.tipo }} </span>
+                        <br>
+                        <span>{{ lancamento?.descricao }}</span>
+                        <br>
+                        <span>R$: {{ lancamento?.valor }} </span>
+                        <br>
+                        <span>{{ lancamento?.data }}</span>
+                        <br>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
