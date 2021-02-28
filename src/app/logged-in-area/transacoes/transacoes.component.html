@@ -17,9 +17,9 @@
     
     <div *ngIf="!carregando && !erroCarregamento">
         <div *ngFor="let transacao of transacoes">
-            <p *ngIf="transacao.data != transacao.data">{{ transacao.data | date:'short' }}</p>
-            <p>{{ transacao.id | number }}  {{ transacao.descricao | string }}   {{ transacao.valor | currency:'BRL' }}</p>
-            <p>{{ transacao.conta | number:'bigint' }}    {{ transacao.plano }}   {{ transacao.tipo }}</p>
+            <p>{{ transacao.data | date:'short' }}</p>
+            <p>{{ transacao.id | number }}  {{ transacao.descricao }}   {{ transacao.valor | currency:'BRL' }}</p>
+            <p>{{ transacao.conta | number:'bigint' }}    {{ transacao.planoConta }}   {{ transacao.tipo }}</p>
             <hr>
         </div>
     </div>

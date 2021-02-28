@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { finalize, take } from 'rxjs/operators';
 import { Lancamento } from 'src/app/interfaces/lancamento.interface';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 import { TransacoesService } from './transacoes.service';
 
@@ -15,11 +17,11 @@ export class TransacoesComponent implements OnInit {
   carregando: boolean;
   erroCarregamento: boolean;
   pagina = 1;
-  //transacoesService: any;
-  //transacoesService: TransacoesService;
 
   constructor(
-   private transacoesService: TransacoesService
+   private transacoesService: TransacoesService,
+   private authService: AuthService,
+   private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -27,19 +29,21 @@ export class TransacoesComponent implements OnInit {
   }
 
   carregarTransacoes() {
+    
     this.carregando = true;
     this.erroCarregamento = false;
-    console.log('ENTREI CARREGAR TRANSACOES')
+    //console.log('ENTREI CARREGAR TRANSACOES')
 
-    this.transacoesService.getTransacoes(this.pagina)
+    this.transacoesService.getTransacoes(this.pagina, this.authService.getUsuario().login)
     .pipe(
       take(1),
       finalize (() =>
-        this.carregando = false
+      this.carregando = false
       ))
-      .subscribe(response => this.successo(response),
+      .subscribe(response => {this.successo(response);
+      console.log(response)},
       error => this.erro(error));
-  }
+    }
   erro(error: any) {
     this.erroCarregamento = true;
     //console.error(error);
