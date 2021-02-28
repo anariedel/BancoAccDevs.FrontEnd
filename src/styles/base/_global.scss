@@ -1,8 +1,10 @@
 @import 'bootstrap';
+@import '~ngx-toastr/toastr';
 
 @font-face {
     font-family: 'Roboto';
     font-style: normal;
+    font-weight: 400;
     src: url('../../assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
 }
 

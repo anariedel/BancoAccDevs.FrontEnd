@@ -3,8 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LoggedInAreaComponent } from './logged-in-area.component';
 
-const routes: Routes = [{
-  path:'logged-in',
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'dash',
+    pathMatch: 'full'
+  },  
+  {
+  path:'',
   component: LoggedInAreaComponent,
   children: [
     { 
