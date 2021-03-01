@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { finalize, take } from 'rxjs/operators';
 import { Dashboard } from 'src/app/interfaces/dashboard.interface';
@@ -13,8 +13,6 @@ import { TransacoesService } from './transacoes.service';
 })
 export class TransacoesComponent implements OnInit {
 
-  @Input() dataFinal;
-  @Input() dataInicial;
   transacoes: Dashboard[];
   carregando: boolean;
   erroCarregamento: boolean;
@@ -45,15 +43,19 @@ export class TransacoesComponent implements OnInit {
       finalize (() =>
       this.carregando = false
       ))
-      .subscribe(response => {this.successo(response);
-      console.log(response)},
-      error => this.erro(error));
+      .subscribe(
+        response => this.onSuccessCarregarTransacoes(response),
+        error => this.onErrorCarregarTransacoes(error)
+      );
     }
-  erro(error: any) {
+
+
+  onErrorCarregarTransacoes(error: any) {
     this.erroCarregamento = true;
     //console.error(error);
   }
-  successo(response: Dashboard[]) {
+  
+  onSuccessCarregarTransacoes(response: Dashboard[]) {
     this.transacoes = response;
   }
 
