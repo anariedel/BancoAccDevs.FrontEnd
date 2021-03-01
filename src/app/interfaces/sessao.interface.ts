@@ -4,8 +4,8 @@ import { Usuario } from './usuario.interface';
 export interface Sessao {
     conta: Conta,
     contaCredito: Conta,
-    dataFim: string,  //formato date
-    dataInicio: string,  //formato date
+    dataFim: Date,  //formato date
+    dataInicio: Date,  //formato date
     token: string,
     usuario: Usuario
 }

@@ -1,68 +1,61 @@
-<div class="container">
-    <div class="card">
-        <div class="card__header">
-            <div class="card__header__icon">
-                ICON
-            </div>
-                        
-            <div class="card__header__text">
-                <span>Conta</span>
+<div class="card-container ">
+    <div class="car_one">
+        <div class="card-body">
+
+            <div class="_header_card">
+                <img src="../../../assets/images/moeda.svg" alt="">
+                <p>Conta</p>
             </div>
 
-            <div class="card__body">
-                <span>Saldo disponível: </span>
-                <br>
-                <span>R$: {{ contaBanco?.saldo ? contaBanco.saldo > 0 : '0,00' }}</span>
-                <br>
-                <span>Transações R$ 2000</span>
+            <div class="secction-span">
+                <label>Saldo Disponivel</label>
+                <span>R$: 10.000,00</span>
+            </div>
+
+            <div class="footer-card">
+                <label>Transações</label>
+                <span>R$: 2.120,00</span>
             </div>
         </div>
+
+
     </div>
+    <div class="car_two">
+        <div class="card-body">
 
-    <div class="card">
-        <div class="card__header__icon">
-                <div class="card__header">
-                ICON
-            </div>
-                        
-            <div class="card__header__text">
-                <span>Conta crédito</span>
+            <div class="_header_card">
+                <img src="../../../assets/images/card.svg" alt="">
+                <p>Conta Crédito</p>
             </div>
 
-            <div class="card__body">
-                <span>Fatura atual </span>
-                <span>R$: {{ contaCredito?.saldo ? contaBanco.saldo > 0 : '0,00' }}</span>
-                <br>
-                <span>Limite disponível: R$ 9000 </span>
+            <div class="secction-span">
+                <label>Fatura Atual</label>
+                <span>R$: 120,00</span>
             </div>
+
+            <div class="footer-card">
+                <label>Limite Disponível</label>
+                <span>R$: 2.120,00</span>
+            </div>
+
         </div>
     </div>
+</div>
+<div class="card-tree-container">
+    <div class="card_tree">
+        <div class="card-body">
 
-    <div class="card">
-        <div class="card__header">
-            <div class="card__header__icon">
-                ICON
+            <div class="_header_card">
+                <img src="../../../assets/images/moeda.svg" alt="">
+                <p>Últimos Lançamentos</p>
             </div>
-                        
-            <div class="card__header__text">
-                <span>Últimos lançamentos</span>
-            </div>
 
-            <div class="card__body">
-                <div class="card__body__icon"></div>
-                <ul>
-                    <li *ngFor="let lancamento of lancamentos">
-                        <span>Compra no  {{ lancamento?.tipo }} </span>
-                        <br>
-                        <span>{{ lancamento?.descricao }}</span>
-                        <br>
-                        <span>R$: {{ lancamento?.valor }} </span>
-                        <br>
-                        <span>{{ lancamento?.data }}</span>
-                        <br>
-                    </li>
-                </ul>
-
+            <div class="lancamentos-span">
+                <img src="../../../assets/images/Group.png" alt="">
+                
+                    <label>Compra no Débito</label>     
+                    <p>GamaAcademy</p>
+                    <span>R$: 120,00</span>
             </div>
         </div>
     </div>

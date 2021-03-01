@@ -75,6 +75,8 @@ export class LoginComponent implements OnInit {
       this.validateAllFormFields(this.loginForm);
     }
 
+    console.log(this.loginForm.controls.usuario);
+
     this.login();
   }
 
@@ -84,6 +86,7 @@ export class LoginComponent implements OnInit {
   }
 
   onErrorLogin() {
+    this.isLoading = false;
     this.errorLoading = true;
     this.toastr.error('Erro ao efetuar login','Erro');
   }

@@ -42,6 +42,8 @@ export class DashComponent implements OnInit {
   }
 
   onSuccessGetDash(response: Dashboard) {
+    //mock para testes
+
     response.contaBanco.lancamentos.push({   conta: 1,
       data: '08-09-2020', //formato date
       descricao: 'Gama Academy',

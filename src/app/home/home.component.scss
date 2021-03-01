@@ -7,9 +7,7 @@
 
 }
 
-
-.home {
-    
+.home { 
 
 
     &__register {
@@ -52,7 +50,6 @@
     }
 
     &__titulo1{
-        font-family: Roboto;
         font-style: normal;
         font-weight: normal;
         font-size: 29px;
@@ -95,14 +92,15 @@
     }
 
     &__txt-titulo{
-        font-family: Roboto;
         font-style: normal;
         font-size: 19px;
         line-height: 22px;
         color: #000;
         font-weight: bold;
-        
+        margin-top: 1em;
     }
+
+    
 
     &__fml{
         width: 50%;
@@ -111,7 +109,7 @@
         margin: 0 41%;
         background: #FBFBFB;
         border-radius: 8px;  
-        padding: 0 21px;
+        padding: 21px 21px;
 
 
         input{
@@ -119,49 +117,53 @@
             border: none;
             border-bottom: 1px solid #878686!important;
             margin: 21px 0;
+            background-color: transparent
         }
 
         input:focus, input:focus, select:focus {
             box-shadow: 0 0 0 0;
             border: 0 none;
             outline: 0;
+            background-color: transparent;
         } 
 
         
     }
 
+    
+
     .btn-primary:active:focus {
         box-shadow: 0 0 0 0;
-        border: 0 none;
+        border:  none;
         outline: 0;
+        box-shadow: none!important;
+        background: #D8D8D8;
     } 
 
     &__txt-btn{
         float: left;
-        font-family: Roboto;
         font-style: normal;
         font-weight: 500;
-        font-size: 12px;
         line-height: 28px;
-        
-        color: #9B9B9B;
     } 
 
 
     &__continua{
         width: 100%;
         border:none;
-        background: #D8D8D8;
+        background-color: var(--color-bg-green);
+        color: var(--color-bg-white);
         border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
     }
 
 
-    &__vector2 {
-        float: right;
-        padding: 4px 16px;
-    } 
-
-
+  
+        
+    .form-control.is-invalid{
+        border-bottom: 1px solid red!important ;
+    }
 
     /*--------------------------- Section 2 --------------------------*/
     &__benefits{
@@ -211,7 +213,6 @@
     }
 
     &__subtitulo2{
-        font-family: Roboto;
         font-style: normal;
         font-weight: normal;
         font-size: 21px;
@@ -232,10 +233,9 @@
     }
 
     &__annuity-primeiro{
-       width: auto;
+       padding: 0 8%;
 
         h2{
-            font-family: Roboto;
             font-style: normal;
             font-weight: bold;
             font-size: 42px;
@@ -245,7 +245,6 @@
             color: #FFFFFF;
         }
         p{
-            font-family: Roboto;
             font-style: normal;
             font-weight: 500;
             font-size: 23px;
@@ -261,7 +260,6 @@
         width: auto;
 
         span{
-            font-family: Roboto;
             font-style: normal;
             font-weight: 500;
             font-size: 140px;
@@ -332,5 +330,15 @@
 
     }
 
-}
+    .invalid-password {
+        font-size: 14px;
+        color: red;
+    }
 
+    .button-cadastro {
+        background-color: var(--color-bg-green);
+        color: var(--color-bg-white);
+        display: flex;
+        justify-content: space-between;
+    }
+}

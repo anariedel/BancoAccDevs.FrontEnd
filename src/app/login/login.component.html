@@ -34,7 +34,7 @@
                     
                     <span>Continuar </span>
                     <i class="fas fa-arrow-right" *ngIf="!isLoading"></i>
-                    <div class="spinner-border spinner-border-sm text-light" role="status" *ngIf="isLoading && !errorLoading">
+                    <div class="spinner-border spinner-border-sm text-light" role="status" *ngIf="isLoading">
                         <span class="sr-only">Loading...</span>
                     </div>
                 </button>
@@ -45,7 +45,7 @@
                     <a routerLink="/recoverypass"> Esqueci minha senha > </a>
                 </div>
                 <div class="card__link">
-                    <a href="#"> Ainda não sou cliente > </a>
+                    <a routerLink="/home"> Ainda não sou cliente > </a>
                 </div>
             </div>
         </div>

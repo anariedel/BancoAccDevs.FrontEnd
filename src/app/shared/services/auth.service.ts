@@ -1,75 +1,63 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Conta } from 'src/app/interfaces/conta.interface';
-import { Usuario } from 'src/app/interfaces/usuario.interface';
+import { Sessao } from 'src/app/interfaces/sessao.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class   AuthService {
 
-  user: Usuario
   token: string;
-  conta: Conta;
-  contaCredito: Conta;
-
+  sessao: Sessao;
+  
   constructor(
     private router: Router,
   ) { }
 
-  setUsuario(usuario: Usuario) {
-    this.user = usuario;
-    localStorage.setItem('usuario', JSON.stringify(this.user));
-  }
-
-  getUsuario() {
-
-    if(this.user) {
-      return this.user;
-    }
-
-    const usuarioGuardado = localStorage.getItem('usuario');
-    if(usuarioGuardado) {
-      this.user = JSON.parse(usuarioGuardado);
-      return this.user;
-    }
-
-    return null;
-  }
-
-  setToken(token: string) {
-    this.token = token;
-    localStorage.setItem('token', JSON.stringify(token));
-  }
-
-  setConta(conta: Conta) {
-    this.conta = conta;
-    localStorage.setItem('conta', JSON.stringify(conta));
-  }
-
-  setContaCredito(contaCredito: Conta) {
-    this.contaCredito = contaCredito;
-    localStorage.setItem('contaCredito', JSON.stringify(contaCredito));
-  }
-
   getToken(): string {
-    const token: string = JSON.parse(localStorage.getItem('token'));
-    if(token) {
-      this.token = token;
+    const sessao: Sessao = JSON.parse(localStorage.getItem('sessao'));
+    if(sessao?.token) {
+      this.token = sessao.token;
       return this.token;
     }
 
     return null;
   }
 
+  setSessao(sessao: Sessao) {
+    this.sessao = sessao;
+    localStorage.setItem('sessao', JSON.stringify(this.sessao));
+
+  }
+
+  getSessao() {
+
+    if(this.sessao) {
+      return this.sessao;
+    }
+
+    const sessao = localStorage.getItem('sessao');
+    if(sessao) {
+      this.sessao = JSON.parse(sessao);
+      return this.sessao;
+    }
+
+    return null;
+  }
+
   isLoggedIn(): boolean {
-    return this.getUsuario() && this.getToken() ? true : false;
+    return this.getSessao() && this.getToken() ? true : false;
+  }
+
+  getAuthorizationHeaderValue(): string {
+    return this.token;
   }
 
   logout() {
-    this.user = undefined;
+    this.sessao = undefined;
     this.token = undefined;
     localStorage.clear();
     this.router.navigate(['/home']);
   }
+
 }
