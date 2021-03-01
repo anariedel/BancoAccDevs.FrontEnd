@@ -42,8 +42,8 @@
                     <input type="password" class="form-control" id="confirmPassword"
                     name="confirmPassword" placeholder="Confirme sua senha"
                     [class.is-invalid]="exibeErro('confirmPassword')">
-                    <p *ngIf="exibeErro('confirmPassword')" class="invalid-feedback">Senhas não combina</p> 
-                    
+                    <p *ngIf="exibeErro('confirmPassword')" class="invalid-feedback"></p> 
+                    <p *ngIf="senhaValida" class="invalid-feedback">Senhas não combina</p> 
                 </div>
                 
                 <button (click)="onSubmit()"  class="btn btn-primary home__continua">

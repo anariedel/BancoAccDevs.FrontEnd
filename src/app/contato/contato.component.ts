@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ContatoComponent implements OnInit {
   
   cadastro: FormGroup;
-  
+  senhaValida = true;
 
   
   constructor(
@@ -26,13 +26,7 @@ export class ContatoComponent implements OnInit {
       password1:['', [Validators.required, Validators.minLength(4)]],      
       confirmPassword:['', [Validators . required ]],
     });
-
-
-
-
   }
-
-  
 
 
  
@@ -42,15 +36,24 @@ export class ContatoComponent implements OnInit {
       this.cadastro.get(field);
       const control = this.cadastro.get(field);
       control.markAsTouched();
-    });
-    
+    });    
   }
+
+
 
   onSubmit() {
     if(this.cadastro.invalid){
       this.validateAllFormFields();
       return;
     }  
+    
+    const validacao = this.validarSenha(this.cadastro.controls.password1.value, this.cadastro.controls.confirmPassword.value)
+    
+
+    if(!validacao){
+      this.senhaValida = false;
+      return
+    }
     
     console.log(this.cadastro);
   }
@@ -63,9 +66,20 @@ export class ContatoComponent implements OnInit {
     return this.cadastro.get(nomeControle)?.invalid && this.cadastro.get(nomeControle)?.touched;
   }
   
-  
  
-    
+ 
+    validarSenha(
+      password: string,
+      confirmPassword: string
+
+      
+    ){
+
+      if( password == confirmPassword){
+        return true
+      } 
+      return false
+    }
 
 
 }
