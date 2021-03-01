@@ -50,8 +50,8 @@ export class   AuthService {
   }
 
   getAuthorizationHeaderValue(): string {
-      return this.token;
-    }
+    return this.token;
+  }
 
   logout() {
     this.sessao = undefined;

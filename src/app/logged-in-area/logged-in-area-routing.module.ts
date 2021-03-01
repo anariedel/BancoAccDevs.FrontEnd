@@ -6,21 +6,21 @@ import { LoggedInAreaComponent } from './logged-in-area.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dash',
+    redirectTo: 'home',
     pathMatch: 'full'
-  },  
+  },
   {
-  path:'',
-  component: LoggedInAreaComponent,
-  children: [
-    { 
-      path: 'dash', 
-      loadChildren: () => import('./dash/dash.module').then(m => m.DashModule),
-    },{
-      path: 'transacoes',
-      loadChildren:() => import('./transacoes/transacoes.module').then(m => m.TransacoesModule),
-    }
-  ]
+    path:'',
+    component: LoggedInAreaComponent,
+    children: [
+      { 
+        path: 'dash', 
+        loadChildren: () => import('./dash/dash.module').then(m => m.DashModule),
+      },{
+        path: 'transacoes',
+        loadChildren:() => import('./transacoes/transacoes.module').then(m => m.TransacoesModule),
+      }
+    ]
 }];
 
 @NgModule({

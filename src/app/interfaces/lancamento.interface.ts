@@ -1,12 +1,11 @@
-import { EnumTransacao } from './enumtransacao.enum';
 import { PlanoConta } from './planoconta.interface';
 
 export interface Lancamento {
-    conta: bigint,
+    conta: number,
     data: string, //formato date
     descricao: string,
-    id: bigint,
+    id: number,
     planoConta: PlanoConta,
-    tipo: EnumTransacao,
+    tipo: string,
     valor: number
 }

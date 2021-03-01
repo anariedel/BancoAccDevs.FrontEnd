@@ -6,7 +6,6 @@ import { AuthService } from './auth.service';
 
 @Injectable()
 export class ApiService {
-
   constructor(
     private http: HttpClient,
     private authService: AuthService,
