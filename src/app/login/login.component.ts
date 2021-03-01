@@ -84,6 +84,7 @@ export class LoginComponent implements OnInit {
   }
 
   onErrorLogin() {
+    this.isLoading = false;
     this.errorLoading = true;
     this.toastr.error('Erro ao efetuar login','Erro');
   }
