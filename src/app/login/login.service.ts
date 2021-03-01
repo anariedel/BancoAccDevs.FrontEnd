@@ -5,8 +5,8 @@ import { tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 import { Login } from '../interfaces/login.interface';
+import { Sessao } from '../interfaces/sessao.interface';
 import { AuthService } from '../shared/services/auth.service';
-import { LoginResponse } from './login.interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -20,14 +20,11 @@ export class LoginService {
     private authService: AuthService
     ) { }
 
-  login(login: Login): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(`${this.API_URL}/login`, login)
+  login(login: Login): Observable<Sessao> {
+    return this.http.post<Sessao>(`${this.API_URL}/login`, login)
       .pipe(
         tap(response => {
-          this.authService.setUsuario(response.usuario);
-          this.authService.setToken(response.token);
-          this.authService.setConta(response.conta);
-          this.authService.setContaCredito(response.contaCredito);
+          this.authService.setSessao(response);
         }) 
       )
   }
