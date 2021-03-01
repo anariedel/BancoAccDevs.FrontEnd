@@ -7,18 +7,18 @@
 
                 <div class="form-group">
                     <input type="text" class="form-control border-bottom"
-                    id="CPF" name="CPF"  aria-describedby="cpflHelp"
+                    id="cpf" name="cpf"  aria-describedby="cpflHelp"
                     autocompçete="off" maxlength="11" placeholder="Digite seu CPF"
-                    formControlName="CPF"
-                    [class.is-invalid]="exibeErro('CPF')">
-                    <p *ngIf="exibeErro('CPF')" class="invalid-feedback"></p>                
+                    formControlName="cpf"
+                    [class.is-invalid]="exibeErro('cpf')">
+                    <p *ngIf="exibeErro('cpf')" class="invalid-feedback"></p>                
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="nomeUsuario"
-                    name="nomeUsuario" placeholder="Escolha um nome de usuário"
-                    formControlName="nomeUsuario"
-                    [class.is-invalid]="exibeErro('nomeUsuario')">
-                    <p *ngIf="exibeErro('nomeUsuario')" class="invalid-feedback"></p>
+                    <input type="text" class="form-control" id="login"
+                    name="login" placeholder="Escolha um nome de usuário"
+                    formControlName="login"
+                    [class.is-invalid]="exibeErro('login')">
+                    <p *ngIf="exibeErro('login')" class="invalid-feedback"></p>
                     
 
                 </div>
@@ -33,17 +33,18 @@
                 <div class="form-group">
                     <input type="password" class="form-control" id="password1"
                     name="password1" placeholder="Senha"
-                    formControlName="password1" 
-                    [class.is-invalid]="exibeErro('password1')" >
-                    <p *ngIf="exibeErro('password1')" class="invalid-feedback"></p>                
+                    formControlName="senha" 
+                    [class.is-invalid]="exibeErro('senha')" >
+                    <p *ngIf="exibeErro('senha')" class="invalid-feedback"></p>                
                 </div>
 
                <div class="form-group">
                     <input type="password" class="form-control" id="confirmPassword"
                     name="confirmPassword" placeholder="Confirme sua senha"
-                    [class.is-invalid]="exibeErro('confirmPassword')">
-                    <p *ngIf="exibeErro('confirmPassword')" class="invalid-feedback"></p> 
-                    <p *ngIf="senhaValida" class="invalid-feedback">Senhas não combina</p> 
+                    [class.is-invalid]="exibeErro('confirmPassword')"
+                    formControlName="confirmacaoSenha">
+                    <p *ngIf="exibeErro('confirmPassword')" class="invalid-feedback"></p>
+                    <p *ngIf="!senhaValida" class="invalid-password">Senhas não combinam</p> 
                 </div>
                 
                 <button (click)="onSubmit()"  class="btn btn-primary home__continua">
