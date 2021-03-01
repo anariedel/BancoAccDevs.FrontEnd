@@ -10,17 +10,16 @@
     </div>
     
     <div class="form-group row">
-        <label for="example-date-input" class="col-2 col-form-label" >Data<br>Inicial</label>
-        <div class="col-10">
-            <input class="form-control" type="date" value="dataInicial" id="example-date-input">
+        <label for="example-date-input" class="col-3 col-form-label" >Data<br>Inicial</label>
+        <div class="col-3">
+            <input class="form-control" type="date" [value]="dataInicial" id="example-date-input">
         </div>
-    </div>
     
-    <div class="form-group row">
-        <label for="example-date-input" class="col-2 col-form-label" >Data<br>Final</label>
-        <div class="col-10">
-            <input class="form-control" type="date" value="dataInicial" id="example-date-input">
+        <label for="example-date-input" class="col-3 col-form-label" >Data<br>Final</label>
+        <div class="col-3">
+            <input class="form-control" type="date" [value]="dataFinal" id="example-date-input">
         </div>
+        <button (click)="setDatas(dataInicial, dataFinal)">Confirmar</button>
     </div>
     
     <div *ngIf="!carregando && !erroCarregamento">
@@ -32,9 +31,11 @@
         </div>
     </div>
 
+<!--
     <div>
         <button (click)="pagAnterior()" [disabled]="pagina === 1">&lt;</button>
         Pagina atual: {{ pagina }}
         <button (click)="proxPagina()">&gt;</button>
     </div>
+ -->
 </div>

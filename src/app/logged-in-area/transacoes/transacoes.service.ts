@@ -15,8 +15,8 @@ export class TransacoesService {
     private api: ApiService
   ) { }
 
-  getTransacoes(login: string): Observable<any>{
+  getTransacoes(dataInicial: string, dataFinal: string, login: string): Observable<any>{
     console.log('ENTREI GET TRANSACOES');
-    return this.api.get(`${this.API_URL}/dashboard?login=${login}`);
+    return this.api.get(`${this.API_URL}/dashboard?fim=${dataFinal}&inicio=${dataInicial}&login=${login}`);
   }
 }

@@ -12,12 +12,13 @@ import { TransacoesService } from './transacoes.service';
   styleUrls: ['./transacoes.component.scss']
 })
 export class TransacoesComponent implements OnInit {
-
+  
+  dataInicial = '2021-02-28';
+  dataFinal = '2021-02-28';
   transacoes: Dashboard[];
   carregando: boolean;
   erroCarregamento: boolean;
   pagina = 1;
-  
   
   constructor(
     private transacoesService: TransacoesService,
@@ -31,13 +32,11 @@ export class TransacoesComponent implements OnInit {
     
     carregarTransacoes() {
       
-      const dataInicial = '2021-02-28';
-      const dataFinal = '2021-02-28';
       this.carregando = true;
       this.erroCarregamento = false;
     //console.log('ENTREI CARREGAR TRANSACOES')
 
-    this.transacoesService.getTransacoes(dataInicial, dataFinal, this.pagina, this.authService.getSessao().usuario.login)
+    this.transacoesService.getTransacoes(this.dataInicial, this.dataFinal, this.authService.getSessao().usuario.login)
     .pipe(
       take(1),
       finalize (() =>
@@ -59,7 +58,12 @@ export class TransacoesComponent implements OnInit {
     this.transacoes = response;
   }
 
-  pagAnterior() {
+  setDatas(dataInicial, dataFinal){
+    this.dataInicial = dataInicial;
+    this.dataFinal = dataFinal;
+  }
+
+/*   pagAnterior() {
     this.pagina = this.pagina - 1;
     this.carregarTransacoes();
   }
@@ -67,5 +71,5 @@ export class TransacoesComponent implements OnInit {
   proxPagina() {
     this.pagina = this.pagina + 1;
     this.carregarTransacoes();
-  }
+  } */
 }
