@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 
 import { HeaderComponent } from './header/header.component';
@@ -14,11 +15,13 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   ],
   imports: [
     CommonModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    ReactiveFormsModule,
   ],
   exports: [
     HeaderComponent,
     SidebarComponent,
+    ReactiveFormsModule
   ],
   providers: [
     ApiService
