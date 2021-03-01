@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contato',
@@ -26,6 +26,10 @@ export class ContatoComponent implements OnInit {
       password1:['', [Validators.required, Validators.minLength(4)]],      
       confirmPassword:['', [Validators . required ]],
     });
+
+
+
+
   }
 
   
@@ -58,17 +62,13 @@ export class ContatoComponent implements OnInit {
 
     return this.cadastro.get(nomeControle)?.invalid && this.cadastro.get(nomeControle)?.touched;
   }
-
-  static SenhasCombinam(controle: AbstractControl) {
-    let senha = controle.get('password1').value;
-    let confirmarSenha = controle.get('password2').value;
-
-    if (senha === confirmarSenha) return null;
-
+  
+  
+ 
     
 
-    controle.get('confirmarSenha').setErrors({ senhasNaoCoincidem: true });
-  }
+
 }
+
 
   
