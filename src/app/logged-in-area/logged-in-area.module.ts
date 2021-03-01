@@ -16,6 +16,6 @@ import { LoggedInAreaComponent } from './logged-in-area.component';
     CommonModule,
     LoggedInAreaRoutingModule,
     SharedModule
-  ]
+  ],
 })
 export class LoggedInAreaModule { }
