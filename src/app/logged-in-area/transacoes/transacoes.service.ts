@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Lancamento } from 'src/app/interfaces/lancamento.interface';
+import { Observable } from 'rxjs';
+import { ApiService } from 'src/app/shared/services/api.service';
 import { environment } from 'src/environments/environment';
 
 
@@ -12,15 +12,11 @@ export class TransacoesService {
   API_URL = environment.API_URL;
 
   constructor(
-    private http: HttpClient
+    private api: ApiService
   ) { }
 
-  getTransacoes(pagina: number, login: string){
+  getTransacoes(login: string): Observable<any>{
     console.log('ENTREI GET TRANSACOES');
-    return this.http.get<Lancamento[]>(this.API_URL + '/lancamentos/planos-conta?login=' + login, {
-      params: {
-        _page: String(pagina),
-      }
-    });
+    return this.api.get(`${this.API_URL}/lancamentos/planos-conta?login=${login}`);
   }
 }

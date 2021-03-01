@@ -34,21 +34,25 @@ export class TransacoesComponent implements OnInit {
     this.erroCarregamento = false;
     //console.log('ENTREI CARREGAR TRANSACOES')
 
-    this.transacoesService.getTransacoes(this.pagina, this.authService.getUsuario().login)
+    this.transacoesService.getTransacoes(this.authService.getSessao().usuario.login)
     .pipe(
       take(1),
       finalize (() =>
       this.carregando = false
       ))
-      .subscribe(response => {this.successo(response);
-      console.log(response)},
-      error => this.erro(error));
+      .subscribe(
+        response => this.onSuccessCarregarTransacoes(response),
+        error => this.onErrorCarregarTransacoes(error)
+      );
     }
-  erro(error: any) {
+
+
+  onErrorCarregarTransacoes(error: any) {
     this.erroCarregamento = true;
     //console.error(error);
   }
-  successo(response: Lancamento[]) {
+  
+  onSuccessCarregarTransacoes(response: Lancamento[]) {
     this.transacoes = response;
   }
 
