@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { finalize, take } from 'rxjs/operators';
-import { Lancamento } from 'src/app/interfaces/lancamento.interface';
+import { Dashboard } from 'src/app/interfaces/dashboard.interface';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 import { TransacoesService } from './transacoes.service';
@@ -13,28 +13,31 @@ import { TransacoesService } from './transacoes.service';
 })
 export class TransacoesComponent implements OnInit {
 
-  transacoes: Lancamento[];
+  transacoes: Dashboard[];
   carregando: boolean;
   erroCarregamento: boolean;
   pagina = 1;
-
+  
+  
   constructor(
-   private transacoesService: TransacoesService,
-   private authService: AuthService,
-   private toastr: ToastrService
-  ) { }
-
-  ngOnInit(): void {
-    this.carregarTransacoes();
-  }
-
-  carregarTransacoes() {
+    private transacoesService: TransacoesService,
+    private authService: AuthService,
+    private toastr: ToastrService
+    ) { }
     
-    this.carregando = true;
-    this.erroCarregamento = false;
+    ngOnInit(): void {
+      this.carregarTransacoes();
+    }
+    
+    carregarTransacoes() {
+      
+      const dataInicial = '2021-02-28';
+      const dataFinal = '2021-02-28';
+      this.carregando = true;
+      this.erroCarregamento = false;
     //console.log('ENTREI CARREGAR TRANSACOES')
 
-    this.transacoesService.getTransacoes(this.pagina, this.authService.getUsuario().login)
+    this.transacoesService.getTransacoes(dataInicial, dataFinal, this.pagina, this.authService.getUsuario().login)
     .pipe(
       take(1),
       finalize (() =>
@@ -48,7 +51,7 @@ export class TransacoesComponent implements OnInit {
     this.erroCarregamento = true;
     //console.error(error);
   }
-  successo(response: Lancamento[]) {
+  successo(response: Dashboard[]) {
     this.transacoes = response;
   }
 
