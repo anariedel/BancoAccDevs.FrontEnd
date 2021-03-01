@@ -24,7 +24,7 @@ const routes: Routes = [
     canActivate: [IsNotLoggedInGuard]
   },
   { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: '**', redirectTo: ''},
+  { path: '**', redirectTo: 'home'},
 
 ];
 
