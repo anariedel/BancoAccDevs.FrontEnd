@@ -6,7 +6,7 @@ import { LoggedInAreaComponent } from './logged-in-area.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dash',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {

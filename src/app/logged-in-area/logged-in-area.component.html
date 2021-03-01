@@ -1,5 +1,8 @@
 <div class="row">
-<app-sidebar class="col"></app-sidebar>
-<app-dash class="col-10"></app-dash>
+    <div class="col-2">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col">
+        <router-outlet></router-outlet>
+    </div>
 </div>
-<router-outlet></router-outlet>
