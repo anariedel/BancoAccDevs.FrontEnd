@@ -145,28 +145,25 @@
         font-style: normal;
         font-weight: 500;
         line-height: 28px;
-        color: #9B9B9B;
     } 
 
 
     &__continua{
         width: 100%;
         border:none;
-        background: #D8D8D8;
+        background-color: var(--color-bg-green);
+        color: var(--color-bg-white);
         border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
     }
 
 
-    &__vector2 {
-        float: right;
-        padding: 4px 16px;
-    } 
-
-    
+  
         
-        .form-control.is-invalid{
-            border-bottom: 1px solid red!important ;
-        }
+    .form-control.is-invalid{
+        border-bottom: 1px solid red!important ;
+    }
 
     /*--------------------------- Section 2 --------------------------*/
     &__benefits{
@@ -333,4 +330,15 @@
 
     }
 
+    .invalid-password {
+        font-size: 14px;
+        color: red;
+    }
+
+    .button-cadastro {
+        background-color: var(--color-bg-green);
+        color: var(--color-bg-white);
+        display: flex;
+        justify-content: space-between;
+    }
 }

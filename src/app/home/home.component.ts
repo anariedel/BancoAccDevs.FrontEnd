@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { finalize } from 'rxjs/operators';
 
 import { HomeService } from './home.service';
 
@@ -40,21 +41,22 @@ export class HomeComponent implements OnInit {
 
     const cadastro = this.montarObjetoCadastro();
 
-    // this.homeService.criarUsuario(cadastro)
-    //   .pipe(
-    //     finalize(() => this.estaCarregando = false)
-    //   )
-    //   .subscribe(
-    //     response => this.onSuccessCadastro(),
-    //     error => this.onErrorCadastro()
-    //   )
+    this.homeService.criarUsuario(cadastro)
+      .pipe(
+        finalize(() => this.estaCarregando = false)
+      )
+      .subscribe(
+        response => this.onSuccessCadastro(),
+        error => this.onErrorCadastro()
+      )
   }
 
   onSuccessCadastro() {
-    this.router.navigate(['login'])
+    this.router.navigate(['login']);
   }
   onErrorCadastro() {
-    this.toastr.error('Erro', 'Problema ao efetuar cadastro');
+    this.estaCarregando = false;
+    this.toastr.error('Problema ao efetuar cadastro', 'Erro');
   }
 
   validateAllFormFields(){
@@ -101,5 +103,9 @@ export class HomeComponent implements OnInit {
   montarObjetoCadastro() {
     const {confirmacaoSenha, ...cadastro} = this.cadastro.value;
     return cadastro;
+  }
+
+  redirecionarParaLogin() {
+    this.router.navigate(['login']);
   }
 }

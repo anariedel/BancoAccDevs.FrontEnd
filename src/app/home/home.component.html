@@ -3,12 +3,11 @@
 <div class="home container">
     <section class="home__register container row">
         <div class="home__register-description col-xs-12 col-sm-12 col-md-6 col-lg-6"> <!---->
-            <!-- aqui não tinha div-->
             <h2 class="home__titulo1"> Gama Bank é um projeto de nossos alunos.</h2><br>
             <h2 class="home__titulo1">Já tem conta? </h2>
             
             <div class="mt-4 mb-5">
-                <button type="submit" class="btn btn-primary home__radius"> Acessar
+                <button class="btn btn-primary home__radius" (click)="redirecionarParaLogin()"> Acessar
                     <img class="home__vector" src="../../assets/images/seta.svg" />
                 </button>
             </div>                       
@@ -59,10 +58,9 @@
                     <p *ngIf="!senhaValida" class="invalid-password">Senhas não combinam</p> 
                 </div>
                 
-                <button (click)="onSubmit()"  class="btn btn-primary home__continua">
+                <button (click)="onSubmit()"  class="btn button-default home__continua" [disabled]="cadastro.invalid">
                     <span class="home__txt-btn" >Continuar  </span>              
-                    <img class="home__vector2" src="../../assets/images/Vector2.svg" />
-                                       
+                    <i class="fas fa-arrow-right fa-1x mt-1" *ngIf="cadastro.invalid"></i>                                       
                 </button>
             </form>
         </div>
