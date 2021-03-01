@@ -19,6 +19,9 @@ const routes: Routes = [
       },{
         path: 'transacoes',
         loadChildren:() => import('./transacoes/transacoes.module').then(m => m.TransacoesModule),
+      },{
+        path: 'deposito',
+        loadChildren:() => import('./deposito/deposito.module').then(m => m.DepositoModule),
       }
     ]
 }];
