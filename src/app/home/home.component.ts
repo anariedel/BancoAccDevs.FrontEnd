@@ -52,6 +52,7 @@ export class HomeComponent implements OnInit {
   }
 
   onSuccessCadastro() {
+    this.estaCarregando = false;
     this.router.navigate(['login']);
   }
   onErrorCadastro() {

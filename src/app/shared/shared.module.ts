@@ -8,7 +8,6 @@ import { HeaderComponent } from './header/header.component';
 import { ApiService } from './services/api.service';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
-
 @NgModule({
   declarations: [
     HeaderComponent,
