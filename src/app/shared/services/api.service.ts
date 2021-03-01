@@ -1,14 +1,12 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 
 import { AuthService } from './auth.service';
 
 @Injectable()
 export class ApiService {
-  baseUrl: string = environment.API_URL;
-
+  
   constructor(
     private http: HttpClient,
     private authService: AuthService,
@@ -46,7 +44,10 @@ export class ApiService {
 
   createAuthorizationHeader() {
     let headers = new HttpHeaders();
-    headers = headers.append('Authorization', this.authService.getAuthorizationHeaderValue()); 
+    const token = this.authService.getAuthorizationHeaderValue()
+    if(token) {
+      headers = headers.append('Authorization', token); 
+    }
     headers = headers.append('Content-Type', 'application/json');
 
     return headers;
