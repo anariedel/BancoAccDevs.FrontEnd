@@ -5,7 +5,7 @@ import { Sessao } from 'src/app/interfaces/sessao.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class   AuthService {
 
   token: string;
   sessao: Sessao;
@@ -47,6 +47,10 @@ export class AuthService {
 
   isLoggedIn(): boolean {
     return this.getSessao() && this.getToken() ? true : false;
+  }
+
+  getAuthorizationHeaderValue(): string {
+    return this.token;
   }
 
   logout() {

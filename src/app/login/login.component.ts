@@ -75,6 +75,8 @@ export class LoginComponent implements OnInit {
       this.validateAllFormFields(this.loginForm);
     }
 
+    console.log(this.loginForm.controls.usuario);
+
     this.login();
   }
 

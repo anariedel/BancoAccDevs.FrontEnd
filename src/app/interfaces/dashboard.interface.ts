@@ -1,6 +1,6 @@
-import { ContaDto } from './contadto.interface';
+import { Conta } from './conta.interface';
 
 export interface Dashboard {
-    contaBanco:	ContaDto,
-    contaCredito: ContaDto,
+    contaBanco:	Conta,
+    contaCredito: Conta,
 }
