@@ -17,6 +17,9 @@ export class DashComponent implements OnInit {
   contaBanco: Conta;
   contaCredito: Conta;
   lancamentos: Array<Lancamento>;
+
+  filtroDataInicial = "2020-01-01";
+  filtroDataFinal = "2021-12-31";
   
   constructor(
     private dashService: DashService,
@@ -31,10 +34,10 @@ export class DashComponent implements OnInit {
 
 
   loadDashData() {
-    const dataInicial = '2020-01-01';
-    const dataFinal = '2021-01-31';
-
-    this.dashService.getDash(dataInicial, dataFinal, this.authService.getSessao().usuario.login)
+    this.dashService.getDash(
+      this.filtroDataFinal, 
+      this.filtroDataInicial, 
+      this.authService.getSessao().usuario.login)
       .subscribe(
         response => this.onSuccessGetDash(response),
         error => this.onErrorGetDash(error),
@@ -42,23 +45,6 @@ export class DashComponent implements OnInit {
   }
 
   onSuccessGetDash(response: Dashboard) {
-    //mock para testes
-
-    response.contaBanco.lancamentos.push({   conta: 1,
-      data: '08-09-2020', //formato date
-      descricao: 'Gama Academy',
-      id: 2,
-      planoConta: null,
-      tipo: 'D',
-      valor: 20});
-
-      response.contaCredito.lancamentos.push({   conta: 2,
-        data: '09-09-2020', //formato date
-        descricao: 'Lojas Americanas',
-        id: 2,
-        planoConta: null,
-        tipo: 'C',
-        valor: 20});
     this.contaBanco = response.contaBanco;
     this.contaCredito = response.contaCredito;
     this.lancamentos = [...response.contaCredito.lancamentos, ...response.contaBanco.lancamentos];
