@@ -34,7 +34,7 @@ export class DashComponent implements OnInit {
     const dataInicial = '2020-01-01';
     const dataFinal = '2021-01-31';
 
-    this.dashService.getDash(dataInicial, dataFinal, this.authService.getUsuario().login)
+    this.dashService.getDash(dataInicial, dataFinal, this.authService.getSessao().usuario.login)
       .subscribe(
         response => this.onSuccessGetDash(response),
         error => this.onErrorGetDash(error),
