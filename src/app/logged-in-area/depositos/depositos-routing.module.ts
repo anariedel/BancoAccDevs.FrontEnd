@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { TransferenciaComponent } from './transferencia.component';
-
+import { DepositosComponent } from './depositos.component';
 
 const routes: Routes = [
-  { path: '', component: TransferenciaComponent},
+  {
+    path: '',
+    component: DepositosComponent,
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-
-
-export class TranferenciaRoutingModule { }
+export class DepositosRoutingModule { }
